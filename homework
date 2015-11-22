@@ -1,0 +1,103 @@
+HTML	
+1.Doctype作用？标准模式与兼容模式各有什么区别?
+<!DOCTYPE> 标签
+作用：用于声明文档的类型，指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。
+备注：<!DOCTYPE> 声明必须是 HTML 文档的第一行，位于 <html> 标签之前。
+标准模式：浏览器尽量执行HTML和CSS规范所指定的行为
+兼容模式：即怪异(Quirks)模式，浏览器的排版引擎会模拟 网景4和Windows中的IE5的行为。
+2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
+行内元素：<button>,< input>,<label>,< select>,< textarea>,< a>,< img>,< map>,< span>,< sub>,< sup>
+块级元素：<div>,<form>,<p>,<h>,<ol>,<ul>,<dl>,<li>,<tb>
+空元素(没有内容的标签)：<br>,&nsbp
+3.页面导入样式时，使用link和@import有什么区别？
+Link：可以把要套用相同样式规则的数篇文件都指定到同一个样式文件中，可以进行统一的修改，也便于整站的设置有统一的风格。
+语法：<link rel="stylesheet" type="text/css" href="css文件地址">
+加载顺序：
+@import：
+语法：<STYLE TYPE="text/css">
+<!—
+@import url(引入的样式表的位址、路径与档名);（注意此处的分号）
+-->
+</STYLE>
+加载顺序：
+4.html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
+
+
+5.简述一下你对HTML语义化的理解？
+
+6.什么是HTML5：离线存储
+HTML5的离线存储是基于一个新建的.appcache文件的，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
+7.Label的作用是什么？是怎么用的？
+
+8.Form表单有那些标签，应该怎么使用
+
+9.Table有那些标签，应该怎么使用
+
+
+10介绍一下CSS的盒子模型？（两种）
+标准盒模型：包含margin、border、padding、content，其宽度（width）和高度（height）只是content的宽度和高度。
+border-box盒模型：相对于标准盒模型而言padding和border不再增加盒子的高度和宽度。
+需增加属性：
+-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+11.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？
+
+
+12.如何居中div？如何居中一个浮动元素？
+对于固定了宽度的div，水平居中{margin:auto;},
+
+13.列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
+display:inline-block
+display:inlile
+display:block
+
+14.CSS3有哪些新特性？
+ CSS3 模块
+1.选择器
+2.框模型
+创建圆角边框
+border-radius
+box-shadow
+border-image
+3.背景和边框
+	background-size
+	background-repeat:
+background-clip（背景绘制位置）（border-box，padding-box，content-box）
+background-origin(背景定位位置，可以与background-position一起使用)
+	多重背景图片：可同时引入多张背景图片
+3.文本效果
+2D/3D 转换
+动画
+多列布局
+用户界面
+15.字体的大小有那些单位，在响应式布局应该用那个单位，em字体的继承是怎么样的
+px,em,响应式应用em。em继承父级元素的大小。
+16.怎么让文字在一行显示不换行
+{white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;}
+17.总结一下用盒子模型定位，position定位和float定位各有哪些技巧和注意事项
+
+
+18.有哪几种清除浮动的方法，你觉得哪种最简洁？ 
+（1）使用带有clear属性的空元素标签：浮动元素后使用一个空元素如<div class="clear"></div>，并在CSS中赋予.clear{clear:both;}属性即可清理浮动。（需要加入大量无用的空标签，非常麻烦，不推荐）
+（2）使用CSS的:after伪元素
+使用CSS的:after伪元素：给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元素末尾添加一个看不见的块级元素清理浮动。（相对于第一种有效减少代码量）
+具体代码如下：
+.cleanfloat:after{
+	content: "/20";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.cleanfolat{
+	zoom:1;
+}
+备注：此时清除的div容器的class是cleanfloat，zoom:1;目的是为了兼容IE。
+（3）使用CSS的overflow属性：
+简洁方便，爱得要死，真的好用。（只需要一句啊，么么哒）
+具体代码如下：
+.cleanfloat{overflow:hidden}
+（4）
+
